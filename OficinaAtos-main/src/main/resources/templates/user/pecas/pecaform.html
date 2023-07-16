@@ -57,7 +57,6 @@
         <div class="mb-3">
           <label for="preco" class="form-label">Valor</label>
           <input type="number" class="form-control" id="preco" th:field="*{preco}" step="0.01" required>
-          <small class="form-text text-danger" th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></small>
         </div>
 
         <div class="mb-3">

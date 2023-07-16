@@ -9,6 +9,7 @@
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
           crossorigin="anonymous">
     <link rel="icon" th:href="@{/image/favicon.png}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         body {
             display: flex;
@@ -24,43 +25,52 @@
             top: 0;
             width: 100%;
             z-index: 100;
+            background-color: #333;
         }
 
         .navbar-brand {
-            margin-right: auto;
-            margin-left: 300px;
-        }
-
-        .navbar-nav {
-            justify-content: center;
+            color: #fff;
+            font-size: 24px;
         }
 
         .navbar-nav .nav-item {
             margin-right: 15px;
         }
 
-        .cf-1 {
-            text-align: center;
-            margin-top: 50px;
-            width: 550px;
-            height: 400px;
+        .nav-link {
+            color: #fff;
+            font-size: 18px;
         }
 
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .display-1 {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #f00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-light" th:class="${bodyClass}">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Gerenciamento de Acesso</a>
+        <a class="navbar-brand" href="#">
+            Oficina Atos
+        </a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link"
                                         aria-current="page" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="register">Registro</a></li>
@@ -71,7 +81,7 @@
 </nav>
 
 <section>
-    <div class="container-fluid  cf-1">
+    <div class="container-fluid cf-1">
         <div class="row justify-content-center">
             <div>
                 <div class="card">
@@ -83,11 +93,21 @@
                         <form action="/login" method="post">
                             <div class="mb-3">
                                 <label for="email">Digite o E-mail:</label>
-                                <input type="email" id="email" name="username" class="form-control">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+                                    <input type="email" id="email" name="username" class="form-control">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password">Digite a Senha:</label>
-                                <input type="password" id="password" name="password" class="form-control">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock-fill"></i>
+                                    </span>
+                                    <input type="password" id="password" name="password" class="form-control">
+                                </div>
                             </div>
                             <button class="btn btn-primary col-md-12">Login</button>
                         </form>

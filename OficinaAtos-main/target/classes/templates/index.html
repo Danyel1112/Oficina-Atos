@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,19 +23,21 @@
             top: 0;
             width: 100%;
             z-index: 100;
+            background-color: #333;
         }
 
         .navbar-brand {
-            margin-right: auto;
-            margin-left: 300px;
-        }
-
-        .navbar-nav {
-            justify-content: center;
+            color: #fff;
+            font-size: 24px;
         }
 
         .navbar-nav .nav-item {
             margin-right: 15px;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 18px;
         }
 
         .container {
@@ -52,19 +54,21 @@
         }
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-light" th:class="${bodyClass}">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Gerenciamento de Acesso</a>
+        <a class="navbar-brand" href="#">
+            Oficina Atos
+        </a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link"
                                         aria-current="page" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="register">Registro</a></li>
